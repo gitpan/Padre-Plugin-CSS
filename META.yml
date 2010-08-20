@@ -1,27 +1,35 @@
 ---
-name: Padre-Plugin-CSS
-version: 0.08
+abstract: 'L<Padre> and CSS'
 author:
   - 'Fayland Lam <fayland@gmail.com>'
-abstract: L<Padre> and CSS
+build_requires:
+  Test::More: 0
+configure_requires:
+  Module::Build: 0.36
+generated_by: 'Module::Build version 0.3603'
 license: perl
+meta-spec:
+  url: http://module-build.sourceforge.net/META-spec-v1.4.html
+  version: 1.4
+name: Padre-Plugin-CSS
+provides:
+  Padre::Plugin::CSS:
+    file: lib/Padre/Plugin/CSS.pm
+    version: 0.10
+  Padre::Plugin::CSS::Document:
+    file: lib/Padre/Plugin/CSS/Document.pm
+    version: 0.10
+  Padre::Plugin::CSS::Help:
+    file: lib/Padre/Plugin/CSS/Help.pm
+    version: 0.10
+requires:
+  CSS::Minifier::XS: 0
+  File::ShareDir: 1.00
+  Padre: 0.43
+  WebService::Validator::CSS::W3C: 0
+  YAML::Tiny: 0
 resources:
   homepage: http://padre.perlide.org/
   license: http://dev.perl.org/licenses/
   repository: http://svn.perlide.org/padre/trunk/Padre-Plugin-CSS/
-build_requires:
-  CSS::Minifier::XS: 0
-  Padre: 0.26
-  Test::More: 0
-  WebService::Validator::CSS::W3C: 0
-provides:
-  Padre::Document::CSS:
-    file: lib/Padre/Document/CSS.pm
-    version: 0.22
-  Padre::Plugin::CSS:
-    file: lib/Padre/Plugin/CSS.pm
-    version: 0.08
-generated_by: Module::Build version 0.33
-meta-spec:
-  url: http://module-build.sourceforge.net/META-spec-v1.4.html
-  version: 1.4
+version: 0.10

@@ -3,19 +3,19 @@ package Padre::Plugin::CSS;
 use warnings;
 use strict;
 
-our $VERSION = '0.08';
+our $VERSION = '0.10';
 
 use base 'Padre::Plugin';
 use Padre::Wx ();
 use Padre::Util   ('_T');
 
 sub padre_interfaces {
-	'Padre::Plugin'   => 0.26,
-	'Padre::Document' => 0.21,
+	'Padre::Plugin'   => 0.43,
+	'Padre::Document' => 0.43,
 }
 
 sub registered_documents {
-	'text/css' => 'Padre::Document::CSS',
+	'text/css' => 'Padre::Plugin::CSS::Document',
 }
 
 sub menu_plugins_simple {
@@ -24,6 +24,10 @@ sub menu_plugins_simple {
 	return ('CSS' => [
 		_T('CSS Minifier'),   sub { $self->css_minifier },
 		_T('Validate CSS'),   sub { $self->validate_css },
+		'Docs'=> [
+			'CSS 2.1 specs', sub { Padre::Wx::launch_browser('http://www.w3.org/TR/CSS21/cover.html'); },
+			'CSS 2.1 property list', sub { Padre::Wx::launch_browser('http://www.w3.org/TR/CSS21/propidx.html'); },
+		],
 	]);
 }
 
