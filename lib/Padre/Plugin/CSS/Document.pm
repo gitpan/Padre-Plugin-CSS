@@ -1,15 +1,19 @@
 package Padre::Plugin::CSS::Document;
+BEGIN {
+  $Padre::Plugin::CSS::Document::VERSION = '0.11';
+}
+
+# ABSTRACT: CSS Document support for Padre
 
 use 5.008;
 use strict;
 use warnings;
 use Carp            ();
 use Padre::Document ();
-use File::Spec  ();
-use YAML::Tiny  qw(LoadFile);
+use File::Spec      ();
+use YAML::Tiny qw(LoadFile);
 
-our $VERSION = '0.10';
-our @ISA     = 'Padre::Document';
+our @ISA = 'Padre::Document';
 
 sub comment_lines_str { return '//' }
 
@@ -20,7 +24,7 @@ sub get_help_provider {
 
 sub find_help_topic {
 	my ($self) = @_;
-	
+
 	# TODO: recognize tags with dash in the name: background-color
 	# TODO: recognize values that include a number: 4px
 	# TODO: recognize pseudo-class selectors:   :visited
@@ -42,7 +46,7 @@ sub find_help_topic {
 	#warn "Topic '$topic'";
 	return if not $topic;
 	$topic =~ s/://;
-	
+
 	return lc $topic;
 }
 
@@ -108,11 +112,11 @@ sub autocomplete {
 		return ("Cannot build regex for '$prefix'");
 	}
 	require Padre::Plugin::CSS::Help;
-	my $keywords=Padre::Plugin::CSS::Help->help_list;
+	my $keywords = Padre::Plugin::CSS::Help->help_list;
 
 	my %seen;
 	my @words;
-	push @words, grep { $_ =~ $regex and !$seen{$_}++} @$keywords;
+	push @words, grep { $_ =~ $regex and !$seen{$_}++ } @$keywords;
 	push @words, grep { !$seen{$_}++ } reverse( $pre_text =~ /$regex/g );
 	push @words, grep { !$seen{$_}++ } ( $post_text =~ /$regex/g );
 
@@ -168,3 +172,42 @@ sub autoclean {
 }
 
 1;
+
+__END__
+=pod
+
+=head1 NAME
+
+Padre::Plugin::CSS::Document - CSS Document support for Padre
+
+=head1 VERSION
+
+version 0.11
+
+=head1 AUTHORS
+
+=over 4
+
+=item *
+
+Fayland Lam <fayland@gmail.com>
+
+=item *
+
+Alexandr Ciornii <alexchorny@gmail.com>
+
+=item *
+
+Ahmad M. Zawawi <ahmad.zawawi@gmail.com>
+
+=back
+
+=head1 COPYRIGHT AND LICENSE
+
+This software is copyright (c) 2010 by Fayland Lam.
+
+This is free software; you can redistribute it and/or modify it under
+the same terms as the Perl 5 programming language system itself.
+
+=cut
+
