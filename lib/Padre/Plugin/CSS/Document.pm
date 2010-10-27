@@ -1,6 +1,6 @@
 package Padre::Plugin::CSS::Document;
 BEGIN {
-  $Padre::Plugin::CSS::Document::VERSION = '0.11';
+  $Padre::Plugin::CSS::Document::VERSION = '0.12';
 }
 
 # ABSTRACT: CSS Document support for Padre
@@ -182,7 +182,7 @@ Padre::Plugin::CSS::Document - CSS Document support for Padre
 
 =head1 VERSION
 
-version 0.11
+version 0.12
 
 =head1 AUTHORS
 

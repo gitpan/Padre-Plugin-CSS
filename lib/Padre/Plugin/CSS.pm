@@ -1,6 +1,6 @@
 package Padre::Plugin::CSS;
 BEGIN {
-  $Padre::Plugin::CSS::VERSION = '0.11';
+  $Padre::Plugin::CSS::VERSION = '0.12';
 }
 
 use warnings;
@@ -116,7 +116,7 @@ Padre::Plugin::CSS - L<Padre> and CSS
 
 =head1 VERSION
 
-version 0.11
+version 0.12
 
 =head1 CSS Minifier
 
