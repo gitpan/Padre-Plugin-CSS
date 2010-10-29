@@ -1,12 +1,12 @@
 package Padre::Plugin::CSS;
 BEGIN {
-  $Padre::Plugin::CSS::VERSION = '0.12';
+  $Padre::Plugin::CSS::VERSION = '0.13';
 }
+
+# ABSTRACT: CSS Support for Padre
 
 use warnings;
 use strict;
-
-# ABSTRACT: L<Padre> and CSS
 
 use base 'Padre::Plugin';
 use Padre::Wx ();
@@ -112,11 +112,11 @@ sub css_minifier {
 
 =head1 NAME
 
-Padre::Plugin::CSS - L<Padre> and CSS
+Padre::Plugin::CSS - CSS Support for Padre
 
 =head1 VERSION
 
-version 0.12
+version 0.13
 
 =head1 CSS Minifier
 

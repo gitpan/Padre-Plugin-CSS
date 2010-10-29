@@ -1,6 +1,6 @@
 package Padre::Plugin::CSS::Help;
 BEGIN {
-  $Padre::Plugin::CSS::Help::VERSION = '0.12';
+  $Padre::Plugin::CSS::Help::VERSION = '0.13';
 }
 
 # ABSTRACT: CSS Help provider
@@ -61,7 +61,7 @@ Padre::Plugin::CSS::Help - CSS Help provider
 
 =head1 VERSION
 
-version 0.12
+version 0.13
 
 =head1 AUTHORS
 
