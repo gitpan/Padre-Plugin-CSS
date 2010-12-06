@@ -1,6 +1,6 @@
 package Padre::Plugin::CSS;
 BEGIN {
-  $Padre::Plugin::CSS::VERSION = '0.13';
+  $Padre::Plugin::CSS::VERSION = '0.14';
 }
 
 # ABSTRACT: CSS Support for Padre
@@ -116,7 +116,7 @@ Padre::Plugin::CSS - CSS Support for Padre
 
 =head1 VERSION
 
-version 0.13
+version 0.14
 
 =head1 CSS Minifier
 
